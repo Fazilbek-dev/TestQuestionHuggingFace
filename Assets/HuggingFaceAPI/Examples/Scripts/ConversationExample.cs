@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEditor.PackageManager;
 
 namespace HuggingFace.API.Examples {
     public class ConversationExample : MonoBehaviour {
@@ -29,6 +30,33 @@ namespace HuggingFace.API.Examples {
             clearButton.onClick.AddListener(ClearButtonClicked);
             inputField.ActivateInputField();
             inputField.onEndEdit.AddListener(OnInputFieldEndEdit);
+            Query();
+        }
+
+        // Make a call to the API
+        void Query()
+        {
+            string inputText = "I'm on my way to the forest.";
+            string[] candidates = {
+            "The player is going to the city",
+            "The player is going to the wilderness",
+            "The player is wandering aimlessly"
+            };
+            HuggingFaceAPI.SentenceSimilarity(inputText, OnSuccess, OnError, candidates);
+        }
+
+        void OnSuccess(float[] result)
+        {
+            foreach (float value in result)
+            {
+                Debug.Log(value);
+                Debug.Log(result);
+            }
+        }
+
+        void OnError(string error)
+        {
+            Debug.LogError(error);
         }
 
         private void SendButtonClicked() {
