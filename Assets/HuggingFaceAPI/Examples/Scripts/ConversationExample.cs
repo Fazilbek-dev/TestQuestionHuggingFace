@@ -10,6 +10,7 @@ namespace HuggingFace.API.Examples {
         [SerializeField] private TMP_InputField inputField;
         [SerializeField] private Button sendButton;
         [SerializeField] private Button clearButton;
+        [SerializeField] private Button _toMainMenuButton;
         [SerializeField] private Color userTextColor = Color.blue;
         [SerializeField] private Color botTextColor = Color.black;
 
@@ -30,6 +31,7 @@ namespace HuggingFace.API.Examples {
         private void Start() {
             sendButton.onClick.AddListener(SendButtonClicked);
             clearButton.onClick.AddListener(ClearButtonClicked);
+            _toMainMenuButton.onClick.AddListener(ToMainMenu);
             inputField.ActivateInputField();
             inputField.onEndEdit.AddListener(OnInputFieldEndEdit);
         }
@@ -88,6 +90,10 @@ namespace HuggingFace.API.Examples {
         private void ClearButtonClicked() {
             conversationText.text = "";
             conversation.Clear();
+        }
+        private void ToMainMenu()
+        {
+            this.gameObject.GetComponent<SceneLoader>().LoadSceneAsync(SceneData.SceneType.MainMenu);
         }
     }
 }

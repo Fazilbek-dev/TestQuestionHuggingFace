@@ -1293,7 +1293,7 @@ GameObject:
   - component: {fileID: 532708028}
   - component: {fileID: 532708027}
   - component: {fileID: 532708031}
-  - component: {fileID: 532708030}
+  - component: {fileID: 532708032}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1351,23 +1351,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &532708030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532708026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c1a7afecb87700498ff0b695e6c40d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scenes:
-  - sceneType: 0
-    sceneName: SampleScene
-  - sceneType: 1
-    sceneName: ConversationExample
 --- !u!114 &532708031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1381,7 +1364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _menuState: 0
-  _loader: {fileID: 532708030}
+  _loader: {fileID: 532708032}
   _openChatButton: {fileID: 729669592}
   _settingsButton: {fileID: 2144587435}
   _backToMainButton: {fileID: 1030774901}
@@ -1399,6 +1382,19 @@ MonoBehaviour:
   _botRed: {fileID: 1894912111}
   _botGreen: {fileID: 290593379}
   _botBlue: {fileID: 914000216}
+--- !u!114 &532708032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532708026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c1a7afecb87700498ff0b695e6c40d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _allScenes: {fileID: 11400000, guid: d48e07fca743b8f41a25db2fc63ecae7, type: 2}
 --- !u!1 &668351126
 GameObject:
   m_ObjectHideFlags: 0

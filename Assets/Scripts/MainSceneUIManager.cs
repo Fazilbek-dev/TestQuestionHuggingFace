@@ -149,8 +149,9 @@ public class MainSceneUIManager : MonoBehaviour
 
     public void ChatScene()
     {
-        _loader.LoadSceneAsync(SceneType.Chat);
+        _loader.LoadSceneAsync(SceneData.SceneType.Chat);
     }
+
 
     public void ChangeStateMenu()
     {
