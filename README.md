@@ -117,3 +117,25 @@
 - `ClearButtonClicked()` — очищает чат.  
 - `ToMainMenu()` — загружает главное меню.  
 
+---
+
+### Исправление ошибки при отправке запроса
+
+При отправке запроса возникала следующая ошибка:
+
+```
+Error: Attempted all backup endpoints, last error: HTTP/1.1 400 Bad Request - {"error":" args[0]: {'past_user_inputs': [], 'generated_responses': [], 'text': 'Hello'} have the wrong format. They should be either of type str or type list","warnings":["There was an inference error:  args[0]: {'past_user_inputs': [], 'generated_responses': [], 'text': 'Hello'} have the wrong format. They should be either of type str or type list"]}
+```
+
+Исправление этой ошибки не было задокументировано, и на форумах также не нашлось обсуждений по данной проблеме.
+
+### Решение
+
+Решение удалось найти, переписав код в файле:
+
+```
+Package/HuggingFaceApi/Runtime/Implementations/Tasks/ConversationTask.cs
+```
+
+Оригинальное обсуждение и источник решения можно найти здесь: [GitHub Issue #28](https://github.com/huggingface/unity-api/issues/28).
+
