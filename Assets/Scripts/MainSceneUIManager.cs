@@ -93,13 +93,13 @@ public class MainSceneUIManager : MonoBehaviour
 
     private void DefaultUIColor()
     {
-        _userRed.value = 1f;
-        _userGreen.value = 1f;
-        _userBlue.value = 1f;
+        _userRed.value = _defaulUserColor.r;
+        _userGreen.value = _defaulUserColor.g;
+        _userBlue.value = _defaulUserColor.b;
 
-        _botRed.value = 1f;
-        _botGreen.value = 0.6f;
-        _botBlue.value = 0f;
+        _botRed.value = _defaultBotColor.r;
+        _botGreen.value = _defaultBotColor.g;
+        _botBlue.value = _defaultBotColor.b;
 
         SaveUIColor();
     }

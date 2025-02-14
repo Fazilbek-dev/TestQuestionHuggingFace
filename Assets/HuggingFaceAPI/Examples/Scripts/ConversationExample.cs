@@ -14,6 +14,8 @@ namespace HuggingFace.API.Examples {
         [SerializeField] private Color userTextColor = Color.blue;
         [SerializeField] private Color botTextColor = Color.black;
 
+        [SerializeField] private SceneLoader _loader;
+
         private Conversation conversation = new Conversation();
         private string userColorHex;
         private string botColorHex;
@@ -93,7 +95,7 @@ namespace HuggingFace.API.Examples {
         }
         private void ToMainMenu()
         {
-            this.gameObject.GetComponent<SceneLoader>().LoadSceneAsync(SceneData.SceneType.MainMenu);
+            _loader.LoadSceneAsync(SceneData.SceneType.MainMenu);
         }
     }
 }

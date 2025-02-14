@@ -622,6 +622,7 @@ MonoBehaviour:
   _toMainMenuButton: {fileID: 775950443}
   userTextColor: {r: 1, g: 0.84458166, b: 0, a: 1}
   botTextColor: {r: 1, g: 1, b: 1, a: 1}
+  _loader: {fileID: 107185203}
 --- !u!114 &107185203
 MonoBehaviour:
   m_ObjectHideFlags: 0
