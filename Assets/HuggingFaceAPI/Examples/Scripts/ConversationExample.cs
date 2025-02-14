@@ -20,6 +20,8 @@ namespace HuggingFace.API.Examples {
         private bool isWaitingForResponse;
 
         private void Awake() {
+            userTextColor = new Color(PlayerPrefs.GetFloat("userR"), PlayerPrefs.GetFloat("userG"), PlayerPrefs.GetFloat("userB"));
+            botTextColor = new Color(PlayerPrefs.GetFloat("botR"), PlayerPrefs.GetFloat("botG"), PlayerPrefs.GetFloat("botB"));
             userColorHex = ColorUtility.ToHtmlStringRGB(userTextColor);
             botColorHex = ColorUtility.ToHtmlStringRGB(botTextColor);
             errorColorHex = ColorUtility.ToHtmlStringRGB(Color.red);
@@ -30,33 +32,6 @@ namespace HuggingFace.API.Examples {
             clearButton.onClick.AddListener(ClearButtonClicked);
             inputField.ActivateInputField();
             inputField.onEndEdit.AddListener(OnInputFieldEndEdit);
-            Query();
-        }
-
-        // Make a call to the API
-        void Query()
-        {
-            string inputText = "I'm on my way to the forest.";
-            string[] candidates = {
-            "The player is going to the city",
-            "The player is going to the wilderness",
-            "The player is wandering aimlessly"
-            };
-            HuggingFaceAPI.SentenceSimilarity(inputText, OnSuccess, OnError, candidates);
-        }
-
-        void OnSuccess(float[] result)
-        {
-            foreach (float value in result)
-            {
-                Debug.Log(value);
-                Debug.Log(result);
-            }
-        }
-
-        void OnError(string error)
-        {
-            Debug.LogError(error);
         }
 
         private void SendButtonClicked() {
